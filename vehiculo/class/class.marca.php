@@ -219,15 +219,15 @@ class marca{
 		<div class="container" style="margin-top:30px;">
 		<table class="table table-hover" style="background-color:#f1fdf3;" border="1" align="center">
 			<tr>
-				<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8">Lista de Marcas</th>
+				<th class="text-center"  background-color:#330867;" colspan="8">Lista de Marcas</th>
 			</tr>
 			<tr>
-				<th class="text-center" colspan="8" style="color:#f7f5f5; background-color:#6879C6"><a href="marcas.php?d=' . $d_new_final . '"class="text-center btn" style="color:#f7f5f5; background-color:#0EB36D" ><b>Nuevo</b></a></th>
+				<th class="text-center" colspan="8"  background-color:#6879C6"><a href="marcas.php?d=' . $d_new_final . '"class="text-center btn" style="color:#f7f5f5; background-color:#0EB36D" ><b>Nuevo</b></a></th>
 			</tr>
 			<tr>
-				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Marca</th>
-				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Pais</th>
-				<th class="text-center" colspan="3" style="color:#f7f5f5; background-color:#2EB4F8">Acciones</th>
+				<th class="text-center"  background-color:#2EB4F8">Marca</th>
+				<th class="text-center"  background-color:#2EB4F8">Pais</th>
+				<th class="text-center" colspan="3"  background-color:#2EB4F8">Acciones</th>
 			</tr>';
 		$sql = "SELECT id, descripcion, pais, foto from marca;";	
 

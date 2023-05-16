@@ -10,11 +10,6 @@
 </head>
 
 <body style="background-image: url('images/fondo.jpg');  background-repeat:no-repeat; background-size: 95rem;">
-	<div class="container text-center" style="margin-top:5%;">
-		<br>
-        <img id="Espe_img" class="" src="img/logo_ESPE.png" style="position:absolute;left:350px;top:40px;width:500px;height:89px;">
-		<br>
-	</div>
 		
 	<div class="container">
 	

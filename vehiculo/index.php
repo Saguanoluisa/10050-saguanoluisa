@@ -63,11 +63,11 @@
 		//NUEVO CODIGO - PARTE III
 		
 		}else{
-			   
+			   /*
 				echo "<br>PETICION POST <br>";
 				echo "<pre>";
 					print_r($_POST);
-				echo "</pre>";
+				echo "</pre>";*/
 		      
 			if(isset($_POST['Guardar']) && $_POST['op']=="new"){
 				$v->save_vehiculo();

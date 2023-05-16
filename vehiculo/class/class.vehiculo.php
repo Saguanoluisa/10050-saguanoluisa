@@ -218,50 +218,50 @@ class vehiculo{
 						 "Eléctrico"
 						 ];
 		$html = '
-		<link rel="stylesheet" href="./css/style.css">		
+		<link rel="stylesheet" href="./css/style.css">
 	
 		<form name="vehiculo" method="POST" action="index.php" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="' . $id  . '">
 		<input type="hidden" name="op" value="' . $op  . '">
 		
-
-			<table id="keywords" cellspacing="0" cellpadding="0">
+		<div class="container">
+			<table>
 			<thead>
 				<tr>
-					<th class="text-center" style="color:#fff; background-color:#023354;" colspan="5"><b>DATOS VEHÍCULO</b></th>
+					<th colspan="5"><b>DATOS VEHÍCULO</b></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Placa:</b></td>
+					<td><b>Placa:</b></td>
 					<td><input type="text" size="6" name="placa" value="' . $this->placa . '" required></td>
 				</tr>
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Marca:</b></td>
+					<td ><b>Marca:</b></td>
 					<td>' . $this->_get_combo_db("marca","id","descripcion","marcaCMB",$this->marca) . '</td>
 				</tr>
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Motor:</b></td>
+					<td ><b>Motor:</b></td>
 					<td><input type="text" size="15" name="motor" value="' . $this->motor . '" required></td>
 				</tr>	
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Chasis:</b></td>
+					<td ><b>Chasis:</b></td>
 					<td><input type="text" size="15" name="chasis" value="' . $this->chasis . '" required></td>
 				</tr>
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Combustible:</b></td>
+					<td ><b>Combustible:</b></td>
 					<td>' . $this->_get_radio($combustibles, "combustibleRBT",$this->combustible) . '</td>
 				</tr>
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Año:<b></td>
+					<td ><b>Año:<b></td>
 					<td>' . $this->_get_combo_anio("anio",2000,$this->anio) . '</td>
 				</tr>
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Color:</b></td>
+					<td ><b>Color:</b></td>
 							<td>' . $this->_get_combo_db("color","id","descripcion","colorCMB",$this->color) . '</td>
 				</tr>
 				<tr>
-					<td style="color:#fff; background-color:#3e769c"><b>Foto:</b></td>
+					<td ><b>Foto:</b></td>
 					<td><input type="file" name="foto" ' . $flag . '></td>
 				</tr>
 				<tr>
@@ -284,13 +284,14 @@ class vehiculo{
 		$d_new = "new/0";
 		$d_new_final = base64_encode($d_new);
 		$html = '
-		<div class="container" style="margin-top:30px;">
-		<table class="table table-hover" style="background-color:#f1fdf3;" border="1" align="center">
+		<link rel="stylesheet" href="./css/style.css">
+		<div class="container">
+		<table align="center">
 			<tr>
-				<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8">Lista de Vehículos</th>
+				<th style="color:#f7f5f5; background-color:#330867;" colspan="8"><center>Lista de Vehículos</center></th>
 			</tr>
 			<tr>
-				<th class="text-center" colspan="8" style="color:#f7f5f5; background-color:#6879C6"><a href="index.php?d=' . $d_new_final . '"class="text-center btn" style="color:#f7f5f5; background-color:#0EB36D" ><b>Nuevo</b></a></th>
+				<th class="text-center" colspan="8" style="color:#f7f5f5; background-color:#6879C6"><a href="index.php?d=' . $d_new_final . '"class="text-center btn" background-color:#0EB36D" ><b><center>Nuevo</b></a></th>
 			</tr>
 			<tr>
 				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Placa</th>
@@ -298,7 +299,7 @@ class vehiculo{
 				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Color</th>
 				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Año</th>
 				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Avalúo</th>
-				<th class="text-center" colspan="3" style="color:#f7f5f5; background-color:#2EB4F8">Acciones</th>
+				<th class="text-center" colspan="3" style="color:#f7f5f5; background-color:#2EB4F8"><center>Acciones</center></th>
 			</tr>';
 		$sql = "SELECT v.id, v.placa, m.descripcion as marca, c.descripcion as color, v.anio, v.avaluo  FROM vehiculo v, color c, marca m WHERE v.marca=m.id AND v.color=c.id;";	
 		$res = $this->con->query($sql);
@@ -317,15 +318,15 @@ class vehiculo{
 					<td>' . $row['color'] . '</td>
 					<td>' . $row['anio'] . '</td>
 					<td>' . $row['avaluo'] . '</td>
-					<td class="text-center"><a href="index.php?d=' . $d_del_final . '"class="text-center btn" style="color:#000000; background-color:#FA0B00" ><b>Borrar</a></td>
-					<td class="text-center"><a href="index.php?d=' . $d_act_final . '"class="text-center btn" style="color:#000000; background-color:#FAE617" ><b>Actualizar</a></td>
-					<td class="text-center"><a href="index.php?d=' . $d_det_final . '"class="text-center btn" style="color:#000000; background-color:#33D6CB" ><b>Detalle</a></td>
+					<td class="text-center"><a href="index.php?d=' . $d_del_final . '"class="text-center btn"  background-color:#FA0B00" ><b>Borrar</a></td>
+					<td class="text-center"><a href="index.php?d=' . $d_act_final . '"class="text-center btn"  background-color:#FAE617" ><b>Actualizar</a></td>
+					<td class="text-center"><a href="index.php?d=' . $d_det_final . '"class="text-center btn"  background-color:#33D6CB" ><b>Detalle</a></td>
 				</tr>';
 		}
 		$html .= '<tr>
-					<th class="text-center" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
+					<th class="text-center" colspan="8"><a href="../index.html" class="text-center btn" background-color:#6d96b3" ><b>Regresar</b></a></th>
 				</tr>
-				</table>';
+				</table></div>';
 		return $html;
 	}
 	
@@ -389,7 +390,7 @@ class vehiculo{
 						<th>$'. $this->_calculo_matricula($row['avaluo']) .' USD</th>
 					</tr>			
 					<tr>
-						<th class="text-center" colspan="6" style="color:#f7f5f5; background-color:#7d92a1" ><img src="img/' . $row['foto'] . '" width="300px"/></th>
+						<th class="text-center" colspan="6" style="color:#f7f5f5; background-color:#7d92a1" ><img src="images/' . $row['foto'] . '" width="300px"/></th>
 					</tr>
 
 
